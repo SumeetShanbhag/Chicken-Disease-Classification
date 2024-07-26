@@ -23,6 +23,8 @@ list_of_files = [
     "requirements.txt",
     "setup.py",
     "research/trials.ipynb",
+    "research/README.md",
+    "templates/index.html"
 ]
 
 for filepath in list_of_files:
@@ -34,7 +36,7 @@ for filepath in list_of_files:
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"Created directory: {filedir} for the file: {filename}")
         
-    if (not os.path.exists(filepath)) or (os.path.getisize(filepath) == 0):
+    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as file:
             pass
             logging.info(f"Created empty file: {filepath}")
